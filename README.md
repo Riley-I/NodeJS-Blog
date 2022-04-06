@@ -15,4 +15,5 @@ The app includes user authentication and homepage open to public without authent
 
 Bootstrap was used for the front end framework and styled with custom CSS.
 
-**TO TEST OUT APPLICATION WITHOUT HAVING TO CREATE A USER ACCOUNT, USE THE FOLLOWING: username: Guest password: groovysandfish**
+**TO TEST OUT APPLICATION WITHOUT HAVING TO CREATE A USER ACCOUNT, USE THE FOLLOWING:** 
+username: **Guest** password: **groovysandfish**
