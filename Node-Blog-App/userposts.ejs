@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BLOG</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="/styles.css">
+  </head>
+<body>
+  
+  <div id="nav">
+      <a href="/logout">Log-out</a>
+      <a href="/">Home</a>
+    <a href="#update">Update</a>
+    <a href="#post">Post</a>
+  </div>
+  
+  <div class="container">
+  <h1>
+    My NodeJS Blog
+  </h1>
+
+  <h2>My Posts</h2>
+
+    <%
+      console.log(result)
+     //console.log(result[0].posts[0].title)  
+      
+      let posts = result[0].posts
+
+      %>
+  
+   <ul>
+ 
+
+    <% for(i=0; i< posts.length;i++){ %>
+     
+     <li>
+        <p class="postTitle"><%= posts[i].title %></p>
+        <p class="postContent"><%= posts[i].content %></p>
+        <p class="postTag">Tag:<i> <%= posts[i].tag %></p></i></p>
+       <p class="postStatus">Status:<i> <%= posts[i].status %></p></i></p>
+    
+       </li>
+     
+     <% } %>
+     
+    
+     <!------------CREATE NEW POST ROUTE WORKING------------->
+<a id="post"></a>
+<div class="form-group">
+   <h2>Post New</h2>
+  
+   <form action="/addpost" method="POST">
+    <input type="text" placeholder="title" name="title"><br>
+    <textarea type="text" placeholder="content" name="content"></textarea> <br>
+     
+      <strong><p>Please select a tag for your post:</p></strong>
+        <input type="radio" id="news" name="post_tag" value="news">
+        <label for="news">News</label><br>
+        <input type="radio" id="best" name="post_tag" value="best">
+        <label for="best">Best</label><br>
+        <input type="radio" id="uncategorized" name="post_tag" value="uncategorized">
+        <label for="uncategorized">Uncategorized</label><br>
+
+     <strong><p>Status</p></strong>
+        <input type="radio" id="draft" name="post_status" value="draft">
+        <label for="news">Draft</label><br>
+        <input type="radio" id="status" name="post_status" value="published">
+        <label for="status">Publish</label><br>
+  
+    <input class="btn" type="submit" value="add post"></input>
+  </form>
+  </div>
+     
+ <!------------UPDATE POST ROUTE WORKING------------->
+<a id="update"></a>
+     <h2>Update</h2> 
+
+     <% for(i=0; i< posts.length;i++){ %>
+
+    <li><form method="POST" action="/update">
+      <label for="currentTitle">Title</label>
+      <input class="hidden" hidden name=currentTitle type=text readonly value="<%= posts[i].title %>" > 
+      <input name=newTitle type=text value="<%= posts[i].title %>"> <br> 
+      
+      <label for="currentContent">Content</label>
+      <input hidden name=currentContent type=text readonly value="<%= posts[i].content %>" > <br> 
+      <input name=newContent type=text value="<%= posts[i].content %>" ><br>
+      
+      <label for="newStatus">Status</label><br>
+      <input class="hidden" hidden type="radio" id="draft" readonly name=currentStatus value="<%= posts[i].status %>">
+      <input  type="radio" id="draft" name=newStatus value="draft">
+        <label for="status">Draft</label><br>
+        <input type="radio" id="published" name="newStatus" value="published">
+        <label for="published">Publish</label><br>
+      <input class="btn" type="submit" value="update"></input>
+      
+      </li>
+
+    
+       </form>
+  
+      
+    <% } %>
+   
+  </ul>
+  
+
+  </div>
+  </body>
+  
+</html>

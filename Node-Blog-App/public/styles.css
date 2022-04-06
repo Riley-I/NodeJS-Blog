@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&family=Roboto&display=swap');
+
+ul li {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+li{
+  background-color: #E3FBFA;
+  border-radius: 10px;
+}
+
+h1, h2 {
+  color: #E3FBFA;
+}
+
+h1{
+  padding-bottom: 50px;
+}
+
+h2 {
+  padding-top: 20px;
+}
+
+a {
+  color: #E3FBFA;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover{
+  color: #89D0CC;
+  text-decoration: none;
+}
+
+p{
+  color: #333534;
+  font-size: 16px;
+}
+
+.postTitle {
+  font-size: 20px;
+  font-weight:700;
+}
+
+.postTag, .postStatus {
+  font-weight:700;
+}
+
+.postTag i, .postStatus i{
+  font-weight:400;
+}
+
+.container {
+  padding-top: 50px;
+}
+
+#nav {
+  padding: 20px;
+}
+
+#nav a {
+  padding-right: 10px;
+}
+
+.btn,
+button {
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #EFAC47;
+  border-color: #EFAC47;
+  box-shadow: none;
+}
+
+.btn:hover, button:hover {
+  background-color: #89D0CC;
+  border-color: #89D0CC;
+  cursor:pointer;
+}
+
+input .hidden {
+  display: none;
+}
+
+input, textarea {
+  border-width: 0px;
+  padding: 10px;
+  border-radius: 3px;
+  margin:5px 5px 5px 0px;
+}
+
+.postContent {
+  margin-top: -10px;
+}
+
+body {
+background-color: #37BBA6;
+font-family: 'Courier New', Courier, monospace;
+}

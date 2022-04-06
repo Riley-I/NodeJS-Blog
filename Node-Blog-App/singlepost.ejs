@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BLOG</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="/styles.css">
+  </head>
+<body>
+  
+    <div id="nav">
+      <a href="/logout">Log-out</a>
+      <a href="/">Home</a>
+  </div>
+  
+  <div class="container">
+  <h1>
+    Single Post
+  </h1>
+    
+  <!---TESTING---->
+    <%
+   
+console.log(result);
+    
+   
+  for(i=0; i< result.length;i++){
+     //console.log(result[i].username)
+    console.log(result[i].posts)
+    
+    let posts = result[i].posts
+    console.log(posts)
+    
+        for(j=0; j< result[i].posts.length;j++){
+          
+           console.log(result[i].posts[j].title)
+           console.log(result[i].posts[j].content)
+          console.log(result[i].posts[j].tag)
+    }
+  }
+    
+      %>
+    
+    
+     <!------DISPLAY ALL PUBLISHED POSTS ON SINGLE POSTS PAGE---->
+<ul>
+
+    <% for(i=0; i< result.length;i++){ %>
+       
+     <%  let posts = result[i].posts %>
+       
+     <%  for(j=0; j< result[i].posts.length;j++){ %>
+  
+      <%  let title = result[i].posts[j].title %>
+  
+      <%  let content = result[i].posts[j].content %>
+       
+       <%  let tag = result[i].posts[j].tag %>
+       
+
+      <li><div>
+        <p class="postTitle"> <%= result[i].posts[j].title %></p><br>
+         <p class="postContent"><%= result[i].posts[j].content %>
+        <p class="postTag">Tag:<i> <%= result[i].posts[j].tag %></p></i></p>
+        <p class="postStatus">Status:<i> <%= result[i].posts[j].status %></p></i></p>
+        </div>
+       </li>
+
+    <% } %>
+   <% } %> 
+
+  </ul>
+    
+    
+    
+      </div>
+  </body>
+  
+</html>
