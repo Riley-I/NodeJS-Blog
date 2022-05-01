@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 
 /*DATABASE*/
-//mongoose.connect("mongodb://nodeapp:Noodles@localhost:27017/rileysdb");
 
 /*adding variables*/
 const connectionSting = `mongodb://${process.env.DB_HOST}/rileysdb`
@@ -135,28 +134,45 @@ app.post('/login', function(req,res){
 
   
 //AUTH
+//disable for security reasons
+
+// app.post('/register', function(req,res){
+  
+//    let username= req.body.username;
+//       //console.log(username);
+//     let password= req.body.password;
+//       console.log(password);
+
+//       //create javascript object
+//       let myData = {
+//               username: username,
+//               password: password
+//               //posts: childSchema
+//               }
+
+// let userData = new User(myData) //will come from a form as JSON 
+ 
+//   userData.save().then(result =>{   
+//     // return res.json(result);
+//    console.log(result);
+//    res.redirect('/login')
+//   }) 
+// })
+
+
+//alternative/disabled registration route
 app.post('/register', function(req,res){
   
-   let username= req.body.username;
-      //console.log(username);
-    let password= req.body.password;
-      //console.log(password);
+  let message= "This feature is temporarily disabled for security reasons. Please log-in with the guest credentials to demo the app. If you aren't sure what they are email me at info@rileyidev.ca.";
 
-      //create javascript object
-      let myData = {
-              username: username,
-              password: password
-              //posts: childSchema
-              }
-      
- let userData = new User(myData) //will come from a form as JSON 
- 
-  userData.save().then(result =>{   
-    //return res.json(result);
-   console.log(result);
-   res.redirect('/login')
-  }) 
-})
+    let result = message;
+    
+  //return res.json(newuser);
+  res.render('../error.ejs', {
+    result:result
+  })
+});
+
 
 
 //CREATE
